@@ -18,6 +18,10 @@ body {
     letter-spacing: -1px;
 }
 
+.interior {
+	margin: 0 auto;
+}
+
 .logoapp {
     opacity: 0;
 }
