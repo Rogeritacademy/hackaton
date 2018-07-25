@@ -54,24 +54,48 @@
     /*** Json ***/
 
     $("#preview").click(function() {
-        var arr = {};
+        //var arr = {};
         var arr = [];
 
         $(".fieldwrapper").each(function() {
-            var entry = {}
+            var entry = {};
             var nom = $(this).find("input[id='name']").val();
             var cognoms = $(this).find("input[id='lastName']").val();
-            var pass = $(this).find("input[id='password']").val();
             var email = $(this).find("input[id='email']").val();
-            var idProf = $(this).find("input[id='idProfile']").val();
+            var pass = $(this).find("input[id='password']").val();
+            var idProf = parseInt($(this).find("input[id='idProfile']").val());
             entry["name"] = nom;
             entry["lastName"] = cognoms;
-            entry["password"] = pass;
             entry["email"] = email;
+            entry["password"] = pass;
             entry["idProfile"] = idProf;
             arr.push(entry);
         });
-        alert(JSON.stringify(arr, null, 4));
+
+        //alert(JSON.stringify(arr));
+        formData=JSON.stringify(arr);
+        formData = formData.replace(/[\[\]]/g, "");
+        //alert(formData);
+
+
+/*        
+        $.ajax({
+            type: "POST",
+            data :formData,
+            url: "https://itacademybcn.herokuapp.com/hackaton/users",
+            contentType: "application/json"
+        });
+*/
+
+        $.ajax({
+            type: "POST",
+            url: "https://itacademybcn.herokuapp.com/hackaton/users",
+            data: formData,
+            success: function() { alert('ok!'); },
+            error: function (request, status, error) { alert(formData); },
+            contentType : "application/json"
+        });
+
     });
     
     /*    
