@@ -53,69 +53,55 @@
 
     /*** Json ***/
 
+    var url="https://itacademybcn.herokuapp.com/hackaton";
+
     $("#preview").click(function() {
-        //var arr = {};
-        var arr = [];
-
-        $(".fieldwrapper").each(function() {
-            var entry = {};
-            var nom = $(this).find("input[id='name']").val();
-            var cognoms = $(this).find("input[id='lastName']").val();
-            var email = $(this).find("input[id='email']").val();
-            var pass = $(this).find("input[id='password']").val();
-            var idProf = parseInt($(this).find("input[id='idProfile']").val());
-            entry["name"] = nom;
-            entry["lastName"] = cognoms;
-            entry["email"] = email;
-            entry["password"] = pass;
-            entry["idProfile"] = idProf;
-            arr.push(entry);
-        });
-
-        //alert(JSON.stringify(arr));
-        formData=JSON.stringify(arr);
-        formData = formData.replace(/[\[\]]/g, "");
-        //alert(formData);
-
-
-/*        
-        $.ajax({
-            type: "POST",
-            data :formData,
-            url: "https://itacademybcn.herokuapp.com/hackaton/users",
-            contentType: "application/json"
-        });
-*/
-
-        $.ajax({
-            type: "POST",
-            url: "https://itacademybcn.herokuapp.com/hackaton/users",
-            data: formData,
-            success: function() { alert('ok!'); },
-            error: function (request, status, error) { alert(formData); },
-            contentType : "application/json"
-        });
-
+        var success=function(user){
+            alert("Benvingut " + user.name);
+        };
+      
+        var error=function(error){
+            alert("Error al registrar-se: " + error.status);
+        };
+        var json = initRegisterJson();
+        debugger;
+        post(url+"/users",json,success,error);
     });
-    
-    /*    
-        $("#add").click(function() {
-            var intId = $("#buildyourform div").length + 1;
-            var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
-            var name = $("<input type=\"text\" name=\"neighborhood\" placeholder=\"Name of Neighborhood\"class=\"fieldname\" />");
-               var url = $("<input type=\"text\" name=\"url\" placeholder=\"Paste here the URL of the Image\"class=\"fieldname\" />");
 
-            var removeButton = $("<input type=\"button\"class=\"remove\" value=\"Remove\" />");
-            removeButton.click(function() {
-                $(this).parent().remove();
-            });
-            fieldWrapper.append(name);
-                    fieldWrapper.append(url);
+    function initRegisterJson(){
+        //var email=$('#inputEmail').val();
+        //var password=$('#inputPassword').val();
 
-            fieldWrapper.append(removeButton);
-            $("#buildyourform").append(fieldWrapper);
+        var nom = $(this).find("input[id='name']").val();
+        var cognoms = $(this).find("input[id='lastName']").val();
+        var email = $(this).find("input[id='email']").val();
+        var password = $(this).find("input[id='password']").val();
+        var idProf = parseInt($(this).find("input[id='idProfile']").val());
+     
+        var json={};
+
+        json["nom"]=nom;
+        json["lastName"]=cognoms;
+        json["email"]=email;
+        json["password"]=password;
+        json["idProfile"]=idProf;
+     
+        return json;
+    }
+
+
+    function post(url,json,success, error){
+        $.ajax({
+          method: "POST",
+          url: url,
+          data: JSON.stringify(json),
+          contentType: "application/json"
+        }).done(function(data) {
+           success(data);
+        }).fail(function(err){
+           error(err);
         });
-    */
+    }
 
     /*** Fi Json ***/
 
