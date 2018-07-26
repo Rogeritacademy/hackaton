@@ -86,7 +86,7 @@
 
 /*** Json ***/
 
-    $("#preview").click(function() {
+    $("#enviar-generico").click(function() {
         //var arr = {};
         var arr = [];
 
