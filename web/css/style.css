@@ -51,6 +51,7 @@ body {
 .logoent {
     margin-top: 30px;
     opacity: 0;
+    z-index: 999;
 }
 
 .icon-block {
@@ -99,6 +100,17 @@ body {
 /* només per l'efecte anime.js */
 .inputfila01, .inputfila02, .inputfila03 {
   opacity: 0;
+}
+
+/* swup */
+header {
+    transition: .4s;
+}
+body.page-homepage header {
+    background: blue;
+}
+body.page-about header {
+    background: yellow;
 }
 
 /* Canvi colors per defecte del form (materialize) */
