@@ -4,13 +4,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
-<!--    <meta http-equiv="Content-Security-Policy" content="*"> -->
     <title>Vot!</title>
-    <header name = "Access-Control-Allow-Origin" value = "*" />
-    <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/materialize.css" type="text/css"
+ rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
@@ -28,45 +25,39 @@
                     </div>
                 </div>
             </div>
-
-
-            <div class="row fieldwrapper">
-                <form class="col s12" name="formulari">
-                  <div class="row">
-                    <div class="input-field col s6">
-                      <input id="name" type="text">
-                      <label for="name">Nom</label>
-                    </div>
-                    <div class="input-field col s6">
-                      <input id="lastName" type="text">
-                      <label for="lastName">Cognoms</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="password" type="password" name="password">
-                      <label for="password">Password</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="email" type="email" class="validate">
-                      <label for="email">Email</label>
-                      <input type="hidden" id="idProfile" name="idProfile" value="1">
-                      <!--<input type="button" value="Generate" class="add" id="preview" />-->
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div id="preview" class="boto center elasticity-0" style="transform: translateX(-200px);"><a href="#" id="download-button" class="btn-large waves-effect waves-light indigo darken-4 bototext">Enviar</a></div>
-                    </div>
-                </form>
-              </div>
-
-              
-                        <div class="logoent center" style="transform:translateY(200px);">
-                            <a href="#" id="" class=""><img src="img/logo2.png" alt=""><img src="img/logo2text.png" alt=""></a>
-                        </div>
-                    </div>
+      			<div class="row fieldwrapper">
+      			    <form class="col s12" name="formulari">
+      			        <div class="row inputfila01" style="transform:translateX(200px);">
+      			            <div class="input-field col s6">
+      			                <input id="name" type="text">
+      			                <label for="name">Nom</label>
+      			            </div>
+      			            <div class="input-field col s6">
+      			                <input id="lastName" type="text">
+      			                <label for="lastName">Cognoms</label>
+      			            </div>
+      			        </div>
+      			        <div class="row inputfila02" style="transform:translateX(-200px);">
+      			            <div class="input-field col s12">
+      			                <input id="password" type="password" name="password">
+      			                <label for="password">Password</label>
+      			            </div>
+      			        </div>
+      			        <div class="row inputfila03" style="transform:translateX(200px);">
+      			            <div class="input-field col s12">
+      			                <input id="email" type="email" class="validate">
+      			                <label for="email">Email</label>
+      			                <input type="hidden" id="idProfile" name="idProfile" value="1">
+      			            </div>
+      			        </div>
+      			        <div class="row">
+      			            <div id="preview" class="boto center elasticity-0" style="transform: translateX(-200px);"><a href="#" id="download-button" class="btn-large waves-effect waves-light indigo darken-4 bototext">Enviar</a></div>
+      			        </div>
+      			    </form>
+      			</div>
+            <div class="row">
+                <div class="logoent center">
+                    <a href="#" id="" class=""><img src="img/logo2.png" alt=""><img src="img/logo2text.png" alt=""></a>
                 </div>
             </div>
         </div>
@@ -75,7 +66,7 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src="js/scripts2.js"></script>
+    <script src="js/scripts.js"></script>
     <script src="js/anime.js"></script>
 </body>
 

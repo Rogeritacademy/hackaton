@@ -61,26 +61,13 @@ body {
     font-size: inherit;
 }
 
-
-/*
-.my-wrapper {
-    position: relative;
-}
-
-#elasticity {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-*/
-
 #animatebubbles {
     margin-bottom: -200px;
 }
 
 .bubblewrapper {
     height: 100%;
-/*    position: relative;
+/*  position: relative;
     margin-bottom: -600px; */
     margin-bottom: -100px;
 }
@@ -109,12 +96,10 @@ body {
     opacity: 0;
 }
 
-
-/*
-.container {
-    background-color: #206ca0;
+/* només per l'efecte anime.js */
+.inputfila01, .inputfila02, .inputfila03 {
+  opacity: 0;
 }
-*/
 
 /* Canvi colors per defecte del form (materialize) */
 
@@ -130,9 +115,9 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 .input-field input:focus + label {
     color: black !important;
   }
-  
-  /* label underline focus color */
-  .row .input-field input:focus {
-    border-bottom: 1px solid black !important;
-    box-shadow: 0 1px 0 0 black !important
-  }
+
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid black !important;
+  box-shadow: 0 1px 0 0 black !important
+}
